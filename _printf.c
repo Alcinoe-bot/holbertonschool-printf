@@ -7,7 +7,7 @@
 
 int _printf(const char * const format, ...)
 {
-conversion_spe[] = {{"%s", print_string}, {"%c", print_char}, {"%%", print_modulo}};
+conversion_spe[] = {{"%s", print_string}, {"%c", print_char}, {"%%", print_modulo}, {' ',  NULL}, {'\0', NULL}};
 
 va_list args;
 int i;

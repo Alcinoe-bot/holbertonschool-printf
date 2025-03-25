@@ -1,28 +1,31 @@
 #include "main.h"
 /**
- * print_strings - prints un string
+ * print_string - prints un string
  * @args: argument
- * Return: longeur de la string
+ * Return: len = longeur de la string
  */
 int print_string(va_list args)
 {
-char *s = va_start(args, int);
+char *s
+s = va_args(args, int);
 int i, len;
-len = _strlen(args)
 
-if (args == NULL)
+if (s == NULL)
 {
-	args = "(null)"
-	for (i = 0; len > i; i++)
+	s = "(null)"
+	len = _strlen(s)
+	for (i = 0; i < len; i++)
 	{
-		_putchar(args[i]);
+		_putchar(s[i]);
 	}
-
-
-
-
-
-for (len >= 0);
+}
+else
 {
-	_putchar(args)
-	len--
+	for (i = 0; i < len; i++)
+	{
+		len = _strlen(s)
+		_putchar(s[i]);
+	}
+}
+return (len);
+}
