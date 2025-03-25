@@ -5,7 +5,7 @@
 * Description (): print un char
 * Return: 1
 */
-int printf_char(va_list args)
+int print_char(va_list args)
 {
 	char c;
 

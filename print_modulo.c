@@ -4,8 +4,9 @@
 * Description (): print %
 * Return: 1
 */
-int print_modulo(void)
+int print_modulo(va_list args)
 {
+(void) args;
 _putchar(37);
 return (1);
 }

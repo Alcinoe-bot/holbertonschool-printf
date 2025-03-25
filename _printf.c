@@ -7,14 +7,15 @@
 
 int _printf(const char * const format, ...)
 {
+int j;
 int i = 0;
+int count = i;
 va_list args;
-conversion_spe format[] = {
+conversion_spe formats[] = {
 {"%s", print_string},
 {"%c", print_char},
-{"%%", print_modulo},
-{' ',  NULL},
-{'\0', NULL}
+{"%", print_modulo},
+{NULL, NULL}
 			};
 
 va_start(args, format);
@@ -24,22 +25,31 @@ if (format == NULL)
 
 while (format[i] != '\0')
 {
-	if (format[i] == '%' && format[i + 1] == 'c')
+	if (format[i] == '%')
 	{
-		int print_char(va_list args);
-	}
-	else if (format[i] == '%' && format[i + 1] == 's')
-	{
-		int print_string(va_list args);
-	}
-	else if (format[i] == '%' && format[i + 1] == '%')
-	{
-		int print_modulo(void);
+		for (j = 0; formats[j].type_spec != NULL; j++)
+		{
+			i++;
+			if (strncmp(&format[i], formats[j].type_spec, 1) == 0)
+			{
+				count += formats[j].f(args);
+				break;
+			}
+			else if (formats[j].type_spec == NULL)
+			{
+				_putchar('%');
+				_putchar(format[i]);
+				count += 2;
+			}
+		}
 	}
 	else
 	{
-		i++;
+		_putchar(format[i]);
+		count++;
 	}
+i++;
 }
-return (0);
+va_end(args);
+return (count);
 }

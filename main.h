@@ -9,7 +9,7 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int _strlen(char *s);
 int print_char(va_list args);
-int print_modulo(void);
+int print_modulo(va_list args);
 int print_string(va_list args);
 
 /**
