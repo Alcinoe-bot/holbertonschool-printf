@@ -1,22 +1,16 @@
 #include "main.h"
 /**
- * printf - print des characteres
+ * _printf - print des characteres
  * @format: format de la chaine de caractere
  * Return: une chaine de caractere
  */
-
 int _printf(const char * const format, ...)
 {
-int j;
-int i = 0;
+int j, i = 0;
 int count = i;
 va_list args;
-conversion_spe formats[] = {
-{"%s", print_string},
-{"%c", print_char},
-{"%", print_modulo},
-{NULL, NULL}
-			};
+conversion_spe formats[] = {{"%s", print_string}, {"%c", print_char},
+{"%", print_modulo}, {NULL, NULL}};
 
 va_start(args, format);
 

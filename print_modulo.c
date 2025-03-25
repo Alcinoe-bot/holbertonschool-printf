@@ -1,7 +1,8 @@
 #include "main.h"
 /**
-* print - print %
+* print_modulo - print %
 * Description (): print %
+* @args: argument
 * Return: 1
 */
 int print_modulo(va_list args)
