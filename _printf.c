@@ -1,5 +1,3 @@
-_printf.c
-
 #include "main.h"
 /**
  * printf - print des characteres
