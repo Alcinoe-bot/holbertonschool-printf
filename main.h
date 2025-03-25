@@ -21,7 +21,7 @@ int print_string(va_list args);
 typedef struct format
 {
 	char *type_spec;
-	int (*f)();
+	int (*f)(va_list args);
 }
 conversion_spe;
 #endif
