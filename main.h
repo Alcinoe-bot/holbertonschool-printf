@@ -13,8 +13,8 @@ int print_modulo(va_list args);
 int print_string(va_list args);
 
 /**
- * struct format - faire correspondre les specificateurs de conversion pour printf
- * @type_spec: type char pointeur du specificateur i.e (l, h) pour (d, i, u, o, x, X)
+ * struct format - correspondre les specificateurs de conversion pour printf
+ * @type_spec: type char pointeur du specificateur pour (d, i, u, o, x, X)
  * @f: pointeur de type vers la fonction pour la conversion du specificateur
  *
  */

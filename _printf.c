@@ -6,8 +6,7 @@
  */
 int _printf(const char * const format, ...)
 {
-int j, i = 0, count = 0;
-int found = 0;
+int j, i = 0, count = 0, found = 0;
 va_list args;
 conversion_spe formats[] = {{"c", print_char}, {"s", print_string},
 {"%", print_modulo}, {NULL, NULL}};
