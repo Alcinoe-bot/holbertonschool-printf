@@ -12,10 +12,10 @@ va_list args;
 conversion_spe formats[] = {{"%s", print_string}, {"%c", print_char},
 {"%", print_modulo}, {NULL, NULL}};
 
-va_start(args, format);
-
 if (format == NULL)
 	return (-1);
+
+va_start(args, format);
 
 while (format[i] != '\0')
 {
@@ -23,17 +23,18 @@ while (format[i] != '\0')
 	{
 		for (j = 0; formats[j].type_spec != NULL; j++)
 		{
-			i++;
 			if (strncmp(&format[i], formats[j].type_spec, 1) == 0)
 			{
 				count += formats[j].f(args);
+				i++;
 				break;
 			}
 			else if (formats[j].type_spec == NULL)
 			{
 				_putchar('%');
-				_putchar(format[i]);
+				_putchar(format[i + 1]);
 				count += 2;
+				i++;
 			}
 		}
 	}
