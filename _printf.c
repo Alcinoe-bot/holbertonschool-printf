@@ -7,6 +7,7 @@
 int _printf(const char * const format, ...)
 {
 int j, i = 0, count = 0;
+int found = 0;
 va_list args;
 conversion_spe formats[] = {{"%c", print_char}, {"%s", print_string},
 {"%", print_modulo}, {NULL, NULL}};
@@ -22,20 +23,17 @@ while (format[i] != '\0')
 	{
 		i++;
 		if (format[i] == '\0')
-		{
 			return (-1);
 
-		int found = 0;
-
 		for (j = 0; formats[j].type_spec != NULL; j++)
+		{
+			if (format[i] == formats[j].type_spec[0])
 			{
-				if (format[i] == formats[j].type_spec[0])
-					{
-						count += formats[j].f(args);
-						found = 1;
-						break;
-					}
+				count += formats[j].f(args);
+				found = 1;
+				break;
 			}
+		}
 
 		if (!found)
 		{
@@ -50,7 +48,7 @@ while (format[i] != '\0')
 		count++;
 	}
 	i++;
-	}
+}
 va_end(args);
 return (count);
 }
