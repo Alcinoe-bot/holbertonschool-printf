@@ -12,21 +12,13 @@ char *s;
 s = va_arg(args, char *);
 
 if (s == NULL)
-{
 	s = "(null)";
-	len = _strlen(s);
-	for (i = 0; i < len; i++)
-	{
-		_putchar(s[i]);
-	}
-}
-else
+
+len = _strlen(s);
+
+for (i = 0; i < len; i++)
 {
-	for (i = 0; i < len; i++)
-	{
-		len = _strlen(s);
-		_putchar(s[i]);
-	}
+	_putchar(s[i]);
 }
 return (len);
 }
