@@ -18,24 +18,27 @@ if (format == NULL)
 va_start(args, format);
 
 while (format[i] != '\0')
-{
+	{
 	if (format[i] == '%')
 	{
+		int found = 0;
+		i++;
+
 		for (j = 0; formats[j].type_spec != NULL; j++)
+			{
+				if (format[i] == formats[j].type_spec[0])
+					{
+						count += formats[j].f(args);
+						found = 1;
+						break;
+					}
+			}
+
+		if (!found)
 		{
-			if (strncmp(&format[i], formats[j].type_spec, 1) == 0)
-			{
-				count += formats[j].f(args);
-				i++;
-				break;
-			}
-			else if (formats[j].type_spec == NULL)
-			{
-				_putchar('%');
-				_putchar(format[i + 1]);
-				count += 2;
-				i++;
-			}
+			_putchar('%');
+			_putchar(format[i]);
+			count += 2;
 		}
 	}
 	else
@@ -43,8 +46,8 @@ while (format[i] != '\0')
 		_putchar(format[i]);
 		count++;
 	}
-i++;
-}
+	i++;
+	}
 va_end(args);
 return (count);
 }
