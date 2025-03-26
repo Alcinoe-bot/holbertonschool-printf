@@ -6,10 +6,9 @@
  */
 int _printf(const char * const format, ...)
 {
-int j, i = 0;
-int count = i;
+int j, i = 0, count = 0;
 va_list args;
-conversion_spe formats[] = {{"%s", print_string}, {"%c", print_char},
+conversion_spe formats[] = {{"%c", print_char}, {"%s", print_string},
 {"%", print_modulo}, {NULL, NULL}};
 
 if (format == NULL)
@@ -18,11 +17,15 @@ if (format == NULL)
 va_start(args, format);
 
 while (format[i] != '\0')
-	{
+{
 	if (format[i] == '%')
 	{
-		int found = 0;
 		i++;
+		if (format[i] == '\0')
+		{
+			return (-1);
+
+		int found = 0;
 
 		for (j = 0; formats[j].type_spec != NULL; j++)
 			{
