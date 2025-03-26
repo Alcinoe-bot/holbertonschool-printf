@@ -30,10 +30,8 @@ while (format[i] != '\0')
 			if (format[i] == formats[j].type_spec[0])
 			{
 				if (formats[j].type_spec[0] == 's')
-				{
 					count += formats[j].f(args);
-					count += formats[j].f(args);
-				}
+
 				else
 					count += formats[j].f(args);
 				found = 1;

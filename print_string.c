@@ -8,8 +8,7 @@ int print_string(va_list args)
 {
 int i;
 int len;
-char *s;
-s = va_arg(args, char *);
+char *s = va_arg(args, char *);
 
 if (s == NULL)
 	s = "(null)";
