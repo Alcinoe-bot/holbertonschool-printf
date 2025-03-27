@@ -20,7 +20,8 @@ for (j = 0; formats[j].type_spec != NULL; j++)
 {
 	if (format[*i] == formats[j].type_spec[0])
 	{
-		return (formats[j].f(args));
+		count += formats[j].f(args);
+		return (count);
 	}
 _putchar('%');
 _putchar(format[*i]);
