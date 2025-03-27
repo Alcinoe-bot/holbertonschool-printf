@@ -1,0 +1,73 @@
+.TH _PRINTF 3 "Mars 2025" "Holberton School" "Fonctions de bibliothèque personnalisées"
+.SH NOM
+_printf - Implémentation personnalisée de la fonction standard printf
+
+.SH SYNOPSIS
+.B #include "main.h"
+
+.B int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+La fonction
+.B _printf()
+produit une sortie formatée vers la sortie standard (stdout), en fonction d'une chaîne de format et d'un nombre variable d'arguments.
+
+Chaque caractère de la chaîne de format est affiché tel quel, sauf lorsqu'un % est rencontré. Le caractère suivant % est traité comme un spécificateur de format.
+
+Cette version personnalisée de
+.B printf
+prend en charge les spécificateurs de format suivants :
+
+.TP
+.B %c
+Affiche un seul caractère.
+
+.TP
+.B %s
+Affiche une chaîne de caractères terminée par un caractère nul.
+
+.TP
+.B %d, %i
+Affiche un entier signé en notation décimale.
+
+.TP
+.B %%
+Affiche un signe de pourcentage (%) littéral.
+
+.TP
+.B Spécificateur non pris en charge
+Si le caractère après % n'est pas reconnu, le % et le caractère sont affichés tels quels.
+Par exemple :
+.RS
+_printf("Valeur : %x"); => affiche "Valeur : %x"
+.RE
+
+.SH VALEUR DE RETOUR
+La fonction retourne le nombre total de caractères affichés.
+Si la chaîne de format est NULL, ou si elle se termine par un spécificateur incomplet comme "%\0", la fonction retourne -1.
+
+.SH EXEMPLES
+.nf
+_printf("Bonjour\n");
+=> Sortie : Bonjour
+
+_printf("Lettre : %c\n", 'A');
+=> Sortie : Lettre : A
+
+_printf("Nombre : %d\n", 42);
+=> Sortie : Nombre : 42
+
+_printf("Texte : %s\n", "Holberton");
+=> Sortie : Texte : Holberton
+
+_printf("%%\n");
+=> Sortie : %
+
+_printf("Inconnu : %q\n");
+=> Sortie : Inconnu : %q
+.fi
+
+.SH AUTEURS
+Alcinoe Romanelli--Fromy
+Projet de l'école Holberton
+GitHub : https://github.com/Alcinoe-bot/holbertonschool-printf
