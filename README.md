@@ -47,11 +47,11 @@ Cette fonction `_printf` ne prend pas en charge :
 
 Voici le lien vers la page de manuel de la fonction `_printf` :
 
-[Man page de _printf]
+[Man page de _printf](https://github.com/Alcinoe-bot/holbertonschool-printf/blob/main/man_3_printf)
 
 ## Organigramme 
 
-![Organigramme de _printf](https://github.com/JuliaCostaDeSousa/holbertonschool-printf/blob/main/Flowchart%20_printf.jpg)
+![Organigramme de _printf]()
 
 ## Description des fichiers
 
