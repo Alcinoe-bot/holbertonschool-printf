@@ -23,9 +23,12 @@ for (j = 0; formats[j].type_spec != NULL; j++)
 		count += formats[j].f(args);
 		return (count);
 	}
-_putchar('%');
-_putchar(format[*i]);
-count += 2;
+	else
+	{
+		putchar('%');
+		_putchar(format[*i]);
+		count += 2;
+	}
 }
 return (count);
 }
