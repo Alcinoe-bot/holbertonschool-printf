@@ -20,9 +20,11 @@ for (j = 0; formats[j].type_spec != NULL; j++)
 {
 	if (format[*i] == formats[j].type_spec[0])
 	{
-		count += formats[j].f(args);
-		return (count);
+		return (formats[j].f(args));
 	}
+_putchar('%');
+_putchar(format[*i]);
+count += 2;
 }
 return (count);
 }
