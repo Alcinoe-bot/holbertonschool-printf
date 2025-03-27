@@ -51,7 +51,7 @@ Voici le lien vers la page de manuel de la fonction `_printf` :
 
 ## Organigramme 
 
-![Organigramme de _printf](file:///C:/Users/estel/Downloads/Diagramme%20de%20flux%20de%20donn%C3%A9es%20-%20Cadre%202.jpg)
+![Organigramme de _printf](https://github.com/Alcinoe-bot/holbertonschool-printf/blob/main/flow%20chart.jpg)
 
 ## Description des fichiers
 
