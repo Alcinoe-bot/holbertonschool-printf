@@ -14,6 +14,8 @@ conversion_spe formats[] = {
 {"c", print_char},
 {"s", print_string},
 {"%", print_modulo},
+{"i", print_int},
+{"d", print_decimal},
 {NULL, NULL}	};
 
 for (j = 0; formats[j].type_spec != NULL; j++)
