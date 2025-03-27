@@ -29,7 +29,7 @@ while (format[i] != '\0')
 		_putchar(format[i]);
 		count++;
 	}
-	i++;
+i++;
 }
 va_end(args);
 return (count);

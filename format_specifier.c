@@ -8,7 +8,7 @@
  */
 int format_specifier(const char *format, va_list args, int *i)
 {
-int j, count = 0;
+int j, count = 0, found = 0;
 
 conversion_spe formats[] = {
 {"c", print_char},
@@ -21,8 +21,15 @@ for (j = 0; formats[j].type_spec != NULL; j++)
 	if (format[*i] == formats[j].type_spec[0])
 	{
 		count += formats[j].f(args);
-		return (count);
+		found = 1;
+		break;
 	}
+}
+if (!found)
+{
+	_putchar('%');
+	_putchar(format[*i]);
+	count += 2;
 }
 return (count);
 }
