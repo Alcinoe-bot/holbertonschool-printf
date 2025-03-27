@@ -8,6 +8,8 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _strlen(char *s);
+int _strncmp(const char *s1, const char *s2, size_t n);
+int format_specifier(const char *format, va_list args, int *i);
 int print_char(va_list args);
 int print_modulo(va_list args);
 int print_string(va_list args);
