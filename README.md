@@ -1,42 +1,57 @@
-_printf
-Description
-This project is a custom implementation of standard the _printf function in C, which handles variadic arguments and custom format specifiers. This version mimics the original function's behavior by supporting various format specifiers to display different types of data.
+# _printf
 
-Requirements
-Allowed editors: vi, vim, emacs
+## Description
+Ce projet est une implémentation personnalisée de la fonction standard `printf` en C, qui gère les arguments variadiques et les spécificateurs de format personnalisés. Cette version imite le comportement de la fonction originale en prenant en charge divers spécificateurs de format pour afficher différents types de données.
 
-Compiled on Ubuntu 20.04 LTS using gcc
+## Exigences
 
-Code must adhere to Betty style
+* Éditeurs autorisés : `vi`, `vim`, `emacs`
 
-No global variables
+* Compilé sur Ubuntu 20.04 LTS avec `gcc`
 
-No more than 5 functions per file
+* Le code doit respecter le style Betty
 
-Function prototypes must be included in main.h
+* Pas de variables globales
 
-Limitations
-This _printf function doesn't handle:
+* Pas plus de 5 fonctions par fichier
 
-flag characters
+* Les prototypes de fonctions doivent être inclus dans `main.h`
 
-field width
+# Limitations
 
-precision
+Cette fonction `_printf` ne prend pas en charge : 
 
-length modifiers
+* les caractères de drapeau (flags)
 
-Function prototype
-int _printf(const char *format, ...);
+* la largeur du champ (field width)
 
-Supported conversion specifiers
-Specifier	Description
-%c	Prints a character
-%s	Prints a string
-%%	Prints a percentage
-%d	Prints an integer
-%i	Prints an integer
-Man page
-Here is the link toward the man page of _printf function:
+* la précision
 
-Man page of _printf
+* les modificateurs de longueur
+
+## Prototype de fonction
+
+`int _printf(const char *format, ...);`
+
+## Spécificateurs de conversion pris en charge
+
+| Spécificateur | Description           |
+|--------------|----------------------|
+| `%c`        | Affiche un caractère  |
+| `%s`        | Affiche une chaîne de caractères |
+| `%%`        | Affiche un pourcentage |
+| `%d`        | Affiche un entier      |
+| `%i`        | Affiche un entier      |
+
+## Page de manuel
+
+Voici le lien vers la page de manuel de la fonction `_printf` :
+
+[Man page de _printf]
+
+## Organigramme 
+
+![Organigramme de _printf](https://github.com/JuliaCostaDeSousa/holbertonschool-printf/blob/main/Flowchart%20_printf.jpg)
+
+## Description des fichiers
+
